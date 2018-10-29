@@ -1,4 +1,3 @@
-
 $(function(){
 	$.get("../static/json/shouye.json", function(data){
 		

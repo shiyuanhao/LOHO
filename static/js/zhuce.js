@@ -4,6 +4,8 @@ $(function(){
 	var yanzen2 = false;
 	var yanzen3 = false;
 	var yanzen4 = false;
+	var yanzen5 = false
+
 //	手机号
 	$(".f1-2-1").keyup(function(){
 		var phone = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(17[0-9])|(18[0-9])|199)\d{8}$/;
@@ -12,10 +14,21 @@ $(function(){
 			yanzen1 = true;
 		}
 		else{
-			$(".f1-2 span").eq(0).html("-用户名错误");
+			$(".f1-2 span").eq(0).html("-手机号码错误");
 			yanzen1 = false;
 		}
 	})
+//  邀请码
+	$(".f1-2-2").keyup(function () {
+		if ($(this).val() == ('loho1314')){
+			$(".f1-2 span").eq(1).html("-邀请码正确");
+			yanzen5 = true
+		}
+		else {
+			$(".f1-2 span").eq(1).html("-邀请码错误");
+			yanzen5 = false
+		}
+    })
 //	密码
 	$(".f1-2-3").keyup(function(){
 		var mima = 	/^[a-z0-9_-]{6,18}$/;
@@ -38,7 +51,7 @@ $(function(){
 			yanzen2 = true;
 		}
 		else{
-			$(".f1-2 span").eq(2).html("-密码错误");
+			$(".f1-2 span").eq(2).html("-请输入最少六位密码");
 			yanzen2 = false;
 		}
 	})
@@ -53,6 +66,17 @@ $(function(){
 			yanzen3 = false;
 		}
 	})
+//  确认验证码
+	$(".f1-2-5").keyup(function () {
+		if ($(this).val().toLowerCase() == $.cookie('code').toLowerCase()){
+			$(".f1-2 span").eq(4).html("-验证码正确！");
+			yanzen4 = true;
+        }
+		else {
+			$(".f1-2 span").eq(4).html("-验证码不正确！");
+			yanzen4 = false;
+		}
+    })
 //	用户协议勾选
 	function cheched(){
 		if($(".f1_2_6").attr('checked')){
@@ -66,7 +90,7 @@ $(function(){
 	$(".m-1").click(function(){
 
 		cheched();
-		if(yanzen1==true && yanzen2==true && yanzen3==true && yanzen4==true){
+		if(yanzen1==true && yanzen2==true && yanzen3==true && yanzen4==true && yanzen5==true){
 					
 			$.cookie("user", $(".f1-2-1").val(), {expires:30, path:"/"});
 		    $.cookie("password", $(".f1-2-3").val(), {expires:30, path:"/"});

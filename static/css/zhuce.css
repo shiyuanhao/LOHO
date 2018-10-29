@@ -51,6 +51,10 @@ a{
 .f1-2 dd{
 	margin-bottom: 20px; display: block; 600px; height: 36px;
 }
+.f1-2-5{
+	position: relative;bottom: 15px;
+}
+
 .f1-2 dd input{
 	width: 240px; height: 30px;
 }

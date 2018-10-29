@@ -1,16 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="../static/css/shouye.css" />
-		<link rel="stylesheet" href="../static/font/iconfont.css" />
-		<script src="../static/js/jquery-1.12.3.js"></script>
-		<script src="../static/js/ajax.js"></script>
-		<script src="../static/js/shouye.js"></script>
-		<script src="../static/js/jquery.cookie.js"></script>
-		<script src="../static/js/gouwucelidedongxi.js"></script>
-		<script>
+		<link rel="stylesheet" href="{% static 'css/shouye.css' %}" />
+		<link rel="stylesheet" href="{% static 'font/iconfont.css'%}" />
+		<script src="{% static 'js/jquery-1.12.3.js' %}"></script>
+		<script src="{% static 'js/ajax.js' %}"></script>
+		<script src="{% static 'js/shouye.js' %}"></script>
+		<script src="{% static 'js/jquery.cookie.js' %}"></script>
+		<script src="{% static 'js/gouwucelidedongxi.js' %}"></script>
+
+        <script>
 			$(function(){
 				if($.cookie("cart")){
 					var count = gouwuce();
@@ -34,15 +36,15 @@
 				<ul class="tp2">
 					<li><a href="#">MY LOHO</a></li>
 					<li><a href="#">我的订单</a></li>
-					<li><a href="mycart.html"><img class="img1" src="../static/img/购物车.png" />购物车(<span style="color: red;" class="nmb">0</span>)</a></li>
+					<li><a href="/mycart/"><img class="img1" src="{% static 'img/购物车.png' %}">购物车(<span style="color: red;" class="nmb">0</span>)</a></li>
 					<li><a href="#">手机版</a></li>
-					<li><a href="#"><img class="img2" src="../static/img/电话.png" />400-8871920 (09:00-23:00)</a></li>
+					<li><a href="#"><img class="img2" src="{% static 'img/电话.png' %}">400-8871920 (09:00-23:00)</a></li>
 					<li><a href="#">
-						<input class="tp-1" type="text"/><button class="tp-2" type="submit">搜索</button>
+						<input class="tp-1" type="text"><button class="tp-2" type="submit">搜索</button>
 					</a></li>
 				</ul>
 			</div>
-			
+
 			<div class="td">
 				<div class="td1">
 					<div class="td-1">深圳站</div>
@@ -50,13 +52,13 @@
 					<div class="td-3"><a href="#">m 查看店铺</a></div>
 				</div>
 				<div class="td2">
-					<div class="td-4"><a href="#"><img src="../static/img/logo.png"></a></div>
+					<div class="td-4"><a href="#"><img src="{% static 'img/logo.png' %}"></a></div>
 				</div>
 				<div class="td3">
-					<div class="td-5"><a href="#"><img src="../static/img/1465203303405363.jpg"/></a></div>
+					<div class="td-5"><a href="#"><img src="{% static 'img/1465203303405363.jpg' %}"></a></div>
 				</div>
 			</div>
-			
+
 			<div class="tb">
 				<div class="nav">
 					<ul class="nav-1">
@@ -65,12 +67,12 @@
 						<li class="nav1-1"><a href="#">
 							男款眼镜
 						<!--公用部分	-->
-							<div class="gy">
-								<div class="gy-1">
-									<div class="gy2-1 .clearfix">
+							</a><div class="gy"><a href="#">
+								</a><div class="gy-1"><a href="#">
+									</a><div class="gy2-1 .clearfix"><a href="#">
 										<h3 class="nk-10">系列</h3>
-										<ul class="nk-11">	
-											<li><a href="#">Mori</a></li>
+										</a><ul class="nk-11"><a href="#">
+											</a><li><a href="#"></a><a href="#">Mori</a></li>
 											<li><a href="#">Divided</a></li>
 											<li><a href="#">Black</a></li>
 											<li><a href="#">Basic</a></li>
@@ -80,7 +82,7 @@
 											<li><a href="#">Alpha</a></li>
 										</ul>
 									</div>
-									<br />
+									<br>
 									<div class="gy2-1">
 										<h3 class="nk-10">材质</h3>
 										<ul class="nk-11">
@@ -93,7 +95,7 @@
 											<li><a href="#">聚合物</a></li>
 										</ul>
 									</div>
-									<br />
+									<br>
 									<div class="gy2-1">
 										<h3 class="nk-10">大小</h3>
 										<ul class="nk-11">
@@ -102,7 +104,7 @@
 											<li><a href="#">大框</a></li>
 										</ul>
 									</div>
-									<br />
+									<br>
 									<div class="gy2-1">
 										<h3 class="nk-10">颜色</h3>
 										<ul class="nk-11">
@@ -120,7 +122,7 @@
 											<li><a href="#">花纹系</a></li>
 										</ul>
 									</div>
-									<br />
+									<br>
 									<div class="gy2-1" style="border: none;">
 										<h3 class="nk-10">品牌</h3>
 										<ul class="nk-11">
@@ -128,19 +130,19 @@
 										</ul>
 									</div>
 								</div>
-								
-								<div class="gy-2"><img src="../static/img/1502040870370642015.jpg"/></div>
+
+								<div class="gy-2"><img src="{% static 'img/1502040870370642015.jpg' %}"></div>
 							</div>
 						<!--结束	-->
-						</a></li>
+						</li>
 						<li class="nav1-2"><a href="#">
 							女款眼镜
-							<div class="gy">
-								<div class="gy-1">
-									<div class="gy2-1 .clearfix">
+							</a><div class="gy"><a href="#">
+								</a><div class="gy-1"><a href="#">
+									</a><div class="gy2-1 .clearfix"><a href="#">
 										<h3 class="nk-10">系列</h3>
-										<ul class="nk-11">	
-											<li><a href="#">Mori</a></li>
+										</a><ul class="nk-11"><a href="#">
+											</a><li><a href="#"></a><a href="#">Mori</a></li>
 											<li><a href="#">Divided</a></li>
 											<li><a href="#">Black</a></li>
 											<li><a href="#">Basic</a></li>
@@ -150,7 +152,7 @@
 											<li><a href="#">Alpha</a></li>
 										</ul>
 									</div>
-									<br />
+									<br>
 									<div class="gy2-1">
 										<h3 class="nk-10">材质</h3>
 										<ul class="nk-11">
@@ -163,7 +165,7 @@
 											<li><a href="#">聚合物</a></li>
 										</ul>
 									</div>
-									<br />
+									<br>
 									<div class="gy2-1">
 										<h3 class="nk-10">大小</h3>
 										<ul class="nk-11">
@@ -172,7 +174,7 @@
 											<li><a href="#">大框</a></li>
 										</ul>
 									</div>
-									<br />
+									<br>
 									<div class="gy2-1">
 										<h3 class="nk-10">颜色</h3>
 										<ul class="nk-11">
@@ -190,7 +192,7 @@
 											<li><a href="#">花纹系</a></li>
 										</ul>
 									</div>
-									<br />
+									<br>
 									<div class="gy2-1" style="border: none;">
 										<h3 class="nk-10">品牌</h3>
 										<ul class="nk-11">
@@ -198,19 +200,19 @@
 										</ul>
 									</div>
 								</div>
-								
-								<div class="gy-2"><img src="../static/img/1502040887409812332.jpg"/></div>
+
+								<div class="gy-2"><img src="{% static 'img/1502040887409812332.jpg' %}"></div>
 							</div>
-						</a></li>
+						</li>
 						<li class="nav1-3"><a href="#">
 							太阳眼镜
-							<div class="gy">
-								<div class="gy-1">
+							</a><div class="gy"><a href="#">
+								</a><div class="gy-1"><a href="#">
 
-									<div class="gy2-1">
+									</a><div class="gy2-1"><a href="#">
 										<h3 class="nk-10">材质</h3>
-										<ul class="nk-11">
-											<li><a href="#">板材</a></li>
+										</a><ul class="nk-11"><a href="#">
+											</a><li><a href="#"></a><a href="#">板材</a></li>
 											<li><a href="#">金属</a></li>
 											<li><a href="#">TR</a></li>
 											<li><a href="#">塑钢</a></li>
@@ -219,7 +221,7 @@
 											<li><a href="#">聚合物</a></li>
 										</ul>
 									</div>
-									<br />
+									<br>
 									<div class="gy2-1">
 										<h3 class="nk-10">大小</h3>
 										<ul class="nk-11">
@@ -228,16 +230,16 @@
 											<li><a href="#">大框</a></li>
 										</ul>
 									</div>
-									<br />
+									<br>
 									<div class="gy2-1">
 										<h3 class="nk-10">框型</h3>
 										<ul class="nk-11">
 											<li><a href="#">椭圆型</a></li>
 											<li><a href="#">圆型</a></li>
-											<li><a href="#">方型</a></li>	
+											<li><a href="#">方型</a></li>
 										</ul>
 									</div>
-									<br />
+									<br>
 									<div class="gy2-1" style="border: none;">
 										<h3 class="nk-10">价格</h3>
 										<ul class="nk-11">
@@ -248,63 +250,63 @@
 										</ul>
 									</div>
 								</div>
-								
-								<div class="gy-2"><img src="../static/img/1502040899243918946.jpg"/></div>
+
+								<div class="gy-2"><img src="{% static 'img/1502040899243918946.jpg' %}"></div>
 							</div>
-						</a></li>
+						</li>
 						<li class="nav1-4"><a href="#">
 							儿童眼镜
-							<div class="gy">
-								<div class="gy-1">
+							</a><div class="gy"><a href="#">
+								</a><div class="gy-1"><a href="#">
 
-									<div class="gy2-1">
+									</a><div class="gy2-1"><a href="#">
 										<h3 class="nk-10">功能</h3>
-										<ul class="nk-11">
-											<li><a href="#">儿童光学镜</a></li>
+										</a><ul class="nk-11"><a href="#">
+											</a><li><a href="#"></a><a href="#">儿童光学镜</a></li>
 											<li><a href="#">儿童太阳镜</a></li>
 										</ul>
 									</div>
-								
+
 								</div>
-								
-								<div class="gy-2"><img src="../static/img/1500920532158062555.jpg"/></div>
+
+								<div class="gy-2"><img src="{% static 'img/1500920532158062555.jpg' %}"></div>
 							</div>
-						</a></li>
+						</li>
 						<li class="nav1-5"><a href="#">
 							功能眼镜
-							<div class="gy">
-								<div class="gy-1">
+							</a><div class="gy"><a href="#">
+								</a><div class="gy-1"><a href="#">
 
-									<div class="gy2-1">
+									</a><div class="gy2-1"><a href="#">
 										<h3 class="nk-10">功能</h3>
-										<ul class="nk-11">
-											<li><a href="#">骑行镜</a></li>
+										</a><ul class="nk-11"><a href="#">
+											</a><li><a href="#"></a><a href="#">骑行镜</a></li>
 											<li><a href="#">老花镜</a></li>
 											<li><a href="#">成人防辐射镜</a></li>
-											
+
 										</ul>
 									</div>
-									
+
 								</div>
-								
-								<div class="gy-2"><img src="../static/img/1500920498733152832.jpg"/></div>
+
+								<div class="gy-2"><img src="{% static 'img/1500920498733152832.jpg' %}"></div>
 							</div>
-						</a></li>
+						</li>
 						<li class="nav1-6"><a href="#">
 							品牌眼镜
-							<div class="gy">
-								<div class="gy-1">
+							</a><div class="gy"><a href="#">
+								</a><div class="gy-1"><a href="#">
 
-									<div class="gy2-1">
+									</a><div class="gy2-1"><a href="#">
 										<h3 class="nk-10">品牌</h3>
-										<ul class="nk-11">
-											<li><a href="#">LOHO</a></li>
+										</a><ul class="nk-11"><a href="#">
+											</a><li><a href="#"></a><a href="#">LOHO</a></li>
 											<li><a href="#">ZEISS/蔡司</a></li>
 											<li><a href="#">Essilor依视路</a></li>
-											
+
 										</ul>
 									</div>
-									<br />
+									<br>
 									<div class="gy2-1">
 										<h3 class="nk-10">折射率</h3>
 										<ul class="nk-11">
@@ -316,7 +318,7 @@
 											<li><a href="#">1.80</a></li>
 										</ul>
 									</div>
-									<br />
+									<br>
 									<div class="gy2-1">
 										<h3 class="nk-10">度数</h3>
 										<ul class="nk-11">
@@ -327,7 +329,7 @@
 											<li><a href="#">600度以上</a></li>
 										</ul>
 									</div>
-									<br />
+									<br>
 									<div class="gy2-1" style="border: none;">
 										<h3 class="nk-10">类型</h3>
 										<ul class="nk-11">
@@ -340,10 +342,10 @@
 										</ul>
 									</div>
 								</div>
-								
-								<div class="gy-2"><img style="width: 210px; height: 210px;" src="../static/img/1482803949414410.jpg"/></div>
+
+								<div class="gy-2"><img style="width: 210px; height: 210px;" src="{% static 'img/1482803949414410.jpg' %}"></div>
 							</div>
-						</a></li>
+						</li>
 						<li class="nav1-7"><a href="#">
 							美瞳/隐形</a>
 							<div class="gy">
@@ -355,10 +357,10 @@
 											<li><a href="#">透明隐形眼镜</a></li>
 											<li><a href="#">彩色隐形眼镜</a></li>
 											<li><a href="#">护理用品</a></li>
-										
+
 										</ul>
 									</div>
-									<br />
+									<br>
 									<div class="gy2-1">
 										<h3 class="nk-10">品牌</h3>
 										<ul class="nk-11">
@@ -368,26 +370,26 @@
 											<li><a href="#">凯达</a></li>
 										</ul>
 									</div>
-									<br />
+									<br>
 									<div class="gy2-1">
 										<h3 class="nk-10">价格</h3>
 										<ul class="nk-11">
-											<li><a href="#"><49元</a></li>
+											<li><a href="#">&lt;49元</a></li>
 											<li><a href="#">50~99元</a></li>
-											
+
 										</ul>
 									</div>
-									<br />
+									<br>
 									<div class="gy2-1">
 										<h3 class="nk-10">功能</h3>
 										<ul class="nk-11">
 											<li><a href="#">护理液</a></li>
 											<li><a href="#">润眼液</a></li>
 											<li><a href="#">护理配件</a></li>
-											
+
 										</ul>
 									</div>
-									<br />
+									<br>
 									<div class="gy2-1" style="border: none;">
 										<h3 class="nk-10">规格</h3>
 										<ul class="nk-11">
@@ -398,29 +400,29 @@
 										</ul>
 									</div>
 								</div>
-								
-								<div class="gy-2"><img src="../static/img/1507482991013830024.jpg"/></div>
+
+								<div class="gy-2"><img src="{% static 'img/1507482991013830024.jpg' %}"></div>
 							</div>
 						</li>
 					</ul>
 					<div class="nav-2" style="background: red;">
 						<a href="#">
-							<img class="img3" src="../static/img/影院信息-3D眼镜.png" />
+							<img class="img3" src="{% static 'img/影院信息-3D眼镜.png' %}">
 							<span class="g-2">LOHO线下体验店</span>
 						</a>
 					</div>
-				</div>	
+				</div>
 			</div>
 		</div>
 	<!--结束-->
-	
+
 	<!--logo轮播图-->
 		<div class="lunbo">
 			<ul id="list1">
-				<!--<li><a href="#"><img style="width: 100%; height: 500px;" src="../static/img/20170916163153_91818.jpg"/></a></li>
-				<li><a href="#"><img style="width: 100%; height: 500px;" src="../static/img/20170911185441_83175.jpg"/></a></li>
-				<li><a href="#"><img style="width: 100%; height: 500px;" src="../static/img/20170818150250_63464.jpg"/></a></li>
-				<li><a href="#"><img style="width: 100%; height: 500px;" src="../static/img/20170915164204_22747.jpg"/></a></li>-->
+				<!--<li><a href="#"><img style="width: 100%; height: 500px;" src="img/20170916163153_91818.jpg"/></a></li>
+				<li><a href="#"><img style="width: 100%; height: 500px;" src="img/20170911185441_83175.jpg"/></a></li>
+				<li><a href="#"><img style="width: 100%; height: 500px;" src="img/20170818150250_63464.jpg"/></a></li>
+				<li><a href="#"><img style="width: 100%; height: 500px;" src="img/20170915164204_22747.jpg"/></a></li>-->
 			</ul>
 			<ul id="list2">
 				<!--<li class="active">1</li>
@@ -428,49 +430,49 @@
 				<li>3</li>
 				<li>4</li>-->
 			</ul>
-			
-			<div id="prev"><i class="iconfont" >&#xe605;</i></div>
-			<div id="next"><i class="iconfont" >&#xe796;</i></div>
-			
+
+			<div id="prev"><i class="iconfont"></i></div>
+			<div id="next"><i class="iconfont"></i></div>
+
 		</div>
-		
+
 		<div class="bg">
 			<div class="box1">
 				<div class="b-1"><a href="#">LOHO特色</a></div>
 				<div class="b-2">
 					<ul class="b2-1">
 						<li>
-							<a href="#"><img src="../static/img/1505359680934732.jpg"/></a>
+							<a href="#"><img src="{% static 'img/1505359680934732.jpg' %}"></a>
 						</li>
 						<li>
-							<a href="#"><img src="../static/img/1500948825562772.jpg"/></a>
+							<a href="#"><img src="{% static 'img/1500948825562772.jpg' %}"></a>
 						</li>
 						<li>
-							<a href="#"><img src="../static/img/1500948778800632.jpg"/></a>
+							<a href="#"><img src="{% static 'img/1500948778800632.jpg' %}"></a>
 						</li>
 						<li>
-							<a href="#"><img src="../static/img/1500948731192724.jpg"/></a>
+							<a href="#"><img src="{% static 'img/1500948731192724.jpg' %}"></a>
 						</li>
 					</ul>
-					
+
 					<div class="b2-2">
-						<a href="#"><img src="../static/img/1498441407736561.jpg"/></a>
+						<a href="#"><img src="{% static 'img/1498441407736561.jpg' %}"></a>
 					</div>
-					
+
 					<ul class="b2-3">
-						<li><a href="#"><img src="../static/img/1486612115903782.jpg"/></a></li>
-						<li><a href="#"><img src="../static/img/1486612115903782.jpg"/></a></li>
+						<li><a href="#"><img src="{% static 'img/1486612115903782.jpg' %}"></a></li>
+						<li><a href="#"><img src="{% static 'img/1486612115903782.jpg' %}"></a></li>
 					</ul>
 				</div>
 			</div>
-		
+
 		<!--下面是重复 部分   开始-->
 			<div class="box2">
 				<div class="bo-1"><a href="#">1F 新品上市</a></div>
 				<div class="bo-2">
 					<div class="bo2-1">
 						<div>
-							<a href="#"><img class="bo2-1-2" src="../static/img/1483095060594439.jpg"/></a>
+							<a href="#"><img class="bo2-1-2" src="{% static 'img/1483095060594439.jpg' %}"></a>
 							<ul class="bo2-1-1">
 								<li><a href="#">太阳眼镜</a></li>
 								<li><a href="#">男款眼镜</a></li>
@@ -490,34 +492,34 @@
 						</div>
 						<span class="control">
 							<i class="prev">
-								<i class="iconfont">&#xe623;</i>
+								<i class="iconfont"></i>
 							</i>
 							<i class="next">
-								<i class="iconfont">&#xe602;</i>
-							</i>						
+								<i class="iconfont"></i>
+							</i>
 						</span>
 					</div>
 					<div class="bo2-2">
-						<a href="#"><img src="../static/img/1489829778943400.jpg"/></a>
+						<a href="#"><img src="{% static 'img/1489829778943400.jpg' %}"></a>
 					</div>
 					<div class="bo2-3">
 						<ul class="bo2-1-4 bt">
-{#							<li><a href="#"><img src="../static/img/1506507493610664.jpg"/></a></li>#}
-{#							<li><a href="#"><img src="../static/img/1506507516457263.jpg"/></a></li>#}
-{#							<li><a href="#"><img src="../static/img/1506507510124942.jpg"/></a></li>#}
-{#							<li><a href="#"><img src="../static/img/1506507503746971.jpg"/></a></li>#}
+
+
+
+
 						</ul>
 					</div>
 				</div>
 			</div>
 		<!--结束	-->
-		
+
 			<div class="box3">
 				<div class="bo-1"><a href="#">2F 新品上市</a></div>
 				<div class="bo-2">
 					<div class="bo2-1">
 						<div>
-							<a href="#"><img class="bo2-1-2" src="../static/img/1501833311124429.jpg"/></a>
+							<a href="#"><img class="bo2-1-2" src="{% static 'img/1501833311124429.jpg' %}"></a>
 							<ul class="bo2-1-1">
 								<li><a href="#">板材太阳镜</a></li>
 								<li><a href="#">金属太阳镜</a></li>
@@ -537,33 +539,33 @@
 						</div>
 						<span class="control">
 							<i class="prev">
-								<i class="iconfont">&#xe623;</i>
+								<i class="iconfont"></i>
 							</i>
 							<i class="next">
-								<i class="iconfont">&#xe602;</i>
-							</i>						
+								<i class="iconfont"></i>
+							</i>
 						</span>
 					</div>
 					<div class="bo2-2">
-						<a href="#"><img src="../static/img/1489829839255824.jpg"/></a>
+						<a href="#"><img src="{% static 'img/1489829839255824.jpg' %}"></a>
 					</div>
 					<div class="bo2-3">
 						<ul class="bo2-1-4">
-							<li><a href="#"><img src="../static/img/1506507735373475.jpg"/></a></li>
-							<li><a href="#"><img src="../static/img/1506507729735751.jpg"/></a></li>
-							<li><a href="#"><img src="../static/img/1506507722188155.jpg"/></a></li>
-							<li><a href="#"><img src="../static/img/1506507716992624.jpg"/></a></li>
+							<li><a href="#"><img src="{% static 'img/1506507735373475.jpg' %}"></a></li>
+							<li><a href="#"><img src="{% static 'img/1506507729735751.jpg' %}"></a></li>
+							<li><a href="#"><img src="{% static 'img/1506507722188155.jpg' %}"></a></li>
+							<li><a href="#"><img src="{% static 'img/1506507716992624.jpg' %}"></a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
-		
+
 			<div class="box4">
 				<div class="bo-1"><a href="#">3F 碳纤维镜框</a></div>
 				<div class="bo-2">
 					<div class="bo2-1">
 						<div>
-							<a href="#"><img class="bo2-1-2" src="../static/img/1483095060594439.jpg"/></a>
+							<a href="#"><img class="bo2-1-2" src="{% static 'img/1483095060594439.jpg' %}"></a>
 							<ul class="bo2-1-1">
 								<li><a href="#">半框</a></li>
 								<li><a href="#">全框</a></li>
@@ -583,33 +585,33 @@
 						</div>
 						<span class="control">
 							<i class="prev">
-								<i class="iconfont">&#xe623;</i>
+								<i class="iconfont"></i>
 							</i>
 							<i class="next">
-								<i class="iconfont">&#xe602;</i>
-							</i>						
+								<i class="iconfont"></i>
+							</i>
 						</span>
 					</div>
 					<div class="bo2-2">
-						<a href="#"><img src="../static/img/1482803886262425.jpg"/></a>
+						<a href="#"><img src="{% static 'img/1482803886262425.jpg' %}"></a>
 					</div>
 					<div class="bo2-3">
 						<ul class="bo2-1-4">
-							<li><a href="#"><img src="../static/img/1506507557172916.jpg"/></a></li>
-							<li><a href="#"><img src="../static/img/1506507550376850.jpg"/></a></li>
-							<li><a href="#"><img src="../static/img/1506507534806816.jpg"/></a></li>
-							<li><a href="#"><img src="../static/img/1506507542115473.jpg"/></a></li>
+							<li><a href="#"><img src="{% static 'img/1506507557172916.jpg' %}"></a></li>
+							<li><a href="#"><img src="{% static 'img/1506507550376850.jpg' %}"></a></li>
+							<li><a href="#"><img src="{% static 'img/1506507534806816.jpg' %}"></a></li>
+							<li><a href="#"><img src="{% static 'img/1506507542115473.jpg' %}"></a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="box5">
 				<div class="bo-1"><a href="#">4F 板材镜框</a></div>
 				<div class="bo-2">
 					<div class="bo2-1">
 						<div>
-							<a href="#"><img class="bo2-1-2" src="../static/img/1483095060594439.jpg"/></a>
+							<a href="#"><img class="bo2-1-2" src="{% static 'img/1483095060594439.jpg' %}"></a>
 							<ul class="bo2-1-1">
 								<li><a href="#">复古款</a></li>
 								<li><a href="#">时尚款</a></li>
@@ -620,7 +622,7 @@
 						<div>
 							<ul class="bo2-1-3">
 								<li><a href="#">超轻板材，轻装上镜</a></li>
-								<li><a href="#">新超薄板材-Thinner&Lighter</a></li>
+								<li><a href="#">新超薄板材-Thinner&amp;Lighter</a></li>
 								<li><a href="#">高端轻奢α系列-板材镜框</a></li>
 								<li><a href="#">创意拼接-只为给您舒适的体验</a></li>
 								<li><a href="#">GOLDEN TIMES流金岁月-美好 复古</a></li>
@@ -629,33 +631,33 @@
 						</div>
 						<span class="control">
 							<i class="prev">
-								<i class="iconfont">&#xe623;</i>
+								<i class="iconfont"></i>
 							</i>
 							<i class="next">
-								<i class="iconfont">&#xe602;</i>
-							</i>						
+								<i class="iconfont"></i>
+							</i>
 						</span>
 					</div>
 					<div class="bo2-2">
-						<a href="#"><img src="../static/img/1482804146103830.jpg"/></a>
+						<a href="#"><img src="{% static 'img/1482804146103830.jpg' %}"></a>
 					</div>
 					<div class="bo2-3">
 						<ul class="bo2-1-4">
-							<li><a href="#"><img src="../static/img/1506507654107134.jpg"/></a></li>
-							<li><a href="#"><img src="../static/img/1506507647119879.jpg"/></a></li>
-							<li><a href="#"><img src="../static/img/1506507641154890.jpg"/></a></li>
-							<li><a href="#"><img src="../static/img/1506507634925910.jpg"/></a></li>
+							<li><a href="#"><img src="{% static 'img/1506507654107134.jpg' %}"></a></li>
+							<li><a href="#"><img src="{% static 'img/1506507647119879.jpg' %}"></a></li>
+							<li><a href="#"><img src="{% static 'img/1506507641154890.jpg' %}"></a></li>
+							<li><a href="#"><img src="{% static 'img/1506507634925910.jpg' %}"></a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
-		
+
 			<div class="box6">
 				<div class="bo-1"><a href="#">5F 纯钛镜框</a></div>
 				<div class="bo-2">
 					<div class="bo2-1">
 						<div>
-							<a href="#"><img class="bo2-1-2" src="../static/img/1483095060594439.jpg"/></a>
+							<a href="#"><img class="bo2-1-2" src="{% static 'img/1483095060594439.jpg' %}"></a>
 							<ul class="bo2-1-1">
 								<li><a href="#">圆形脸</a></li>
 								<li><a href="#">方形脸</a></li>
@@ -675,38 +677,38 @@
 						</div>
 						<span class="control">
 							<i class="prev">
-								<i class="iconfont">&#xe623;</i>
+								<i class="iconfont"></i>
 							</i>
 							<i class="next">
-								<i class="iconfont">&#xe602;</i>
-							</i>						
+								<i class="iconfont"></i>
+							</i>
 						</span>
 					</div>
 					<div class="bo2-2">
-						<a href="#"><img src="../static/img/1482804202657630.jpg"/></a>
+						<a href="#"><img src="{% static 'img/1482804202657630.jpg' %}"></a>
 					</div>
 					<div class="bo2-3">
 						<ul class="bo2-1-4">
-							<li><a href="#"><img src="../static/img/1506507706213751.jpg"/></a></li>
-							<li><a href="#"><img src="../static/img/1506507701713922.jpg"/></a></li>
-							<li><a href="#"><img src="../static/img/1506507693162976.jpg"/></a></li>
-							<li><a href="#"><img src="../static/img/1506507667496517.jpg"/></a></li>
+							<li><a href="#"><img src="{% static 'img/1506507706213751.jpg' %}"></a></li>
+							<li><a href="#"><img src="{% static 'img/1506507701713922.jpg' %}"></a></li>
+							<li><a href="#"><img src="{% static 'img/1506507693162976.jpg' %}"></a></li>
+							<li><a href="#"><img src="{% static 'img/1506507667496517.jpg' %}"></a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
-		
+
 			<div class="box7">
 				<div class="bo-1"><a href="#">6F 品牌镜片</a></div>
 				<div class="bo-2">
 					<div class="bo2-1">
 						<div>
-							<a href="#"><img class="bo2-1-2" src="../static/img/1444204884255352.jpg"/></a>
+							<a href="#"><img class="bo2-1-2" src="{% static 'img/1444204884255352.jpg' %}"></a>
 							<ul class="bo2-1-1">
 								<li><a href="#">LOHO</a></li>
 								<li><a href="#">依视路</a></li>
 								<li><a href="#">蔡司</a></li>
-								
+
 							</ul>
 						</div>
 						<div>
@@ -721,45 +723,45 @@
 						</div>
 						<span class="control">
 							<i class="prev">
-								<i class="iconfont">&#xe623;</i>
+								<i class="iconfont"></i>
 							</i>
 							<i class="next">
-								<i class="iconfont">&#xe602;</i>
-							</i>						
+								<i class="iconfont"></i>
+							</i>
 						</span>
 					</div>
 					<div class="bo2-2">
-						<a href="#"><img src="../static/img/1442195487390197.jpg"/></a>
+						<a href="#"><img src="{% static 'img/1442195487390197.jpg' %}"></a>
 					</div>
 					<div class="bo2-3">
 						<ul class="bo2-1-4">
-							<li><a href="#"><img src="../static/img/1450924489699332.jpg"/></a></li>
-							<li><a href="#"><img src="../static/img/1450924505810811.jpg"/></a></li>
-							<li><a href="#"><img src="../static/img/1450924520969115.jpg"/></a></li>
-							<li><a href="#"><img src="../static/img/1482993102186855.jpg"/></a></li>
+							<li><a href="#"><img src="{% static 'img/1450924489699332.jpg' %}"></a></li>
+							<li><a href="#"><img src="{% static 'img/1450924505810811.jpg' %}"></a></li>
+							<li><a href="#"><img src="{% static 'img/1450924520969115.jpg' %}"></a></li>
+							<li><a href="#"><img src="{% static 'img/1482993102186855.jpg' %}"></a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
-		
+
 			<div class="box8">
 				<div class="x-1">
-					<a href="#"><img src="../static/img/1502961222327943.jpg"</a>
-				</div>
-				<div class="x-2">
-					<div>
-						<a href="#">全国236家连锁实体店欢迎您！</a>
+					<a href="#"><img src="{% static 'img/1502961222327943.jpg' %}" <="" a="">
+				</a></div><a href="#">
+				</a><div class="x-2"><a href="#">
+					</a><div><a href="#">
+						</a><a href="#">全国236家连锁实体店欢迎您！</a>
 						<span class="x3-1">
-							<img src="../static/img/bg3.jpg" />
+							<img src="{% static 'img/bg3.jpg' %}">
 							<a href="#"> 查找您身边的实体店</a>
 						</span>
 					</div>
 					<div>
-						<a href="#"><img src="../static/img/dianmianxi.jpg"/></a>
+						<a href="#"><img src="{% static 'img/dianmianxi.jpg' %}"></a>
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="box9">
 				<div class="o-1">
 					<ul class="o1-1">
@@ -789,7 +791,7 @@
 					<div class="o2-1">&nbsp; &nbsp; &nbsp;  最新评论</div>
 					<ul class="o2-2">
 						<li>
-							<div><img class="o2-2-1" src="../static/img/G_1477266342822425907.jpg" /></div>
+							<div><img class="o2-2-1" src="{% static 'img/G_1477266342822425907.jpg' %}"></div>
 							<div>
 								<p>lhsj_131******610(2017年10月15日 23:25:52)</p>
 								<p>评论： 喜欢 很好看 而且有活动很划算</p>
@@ -797,7 +799,7 @@
 							</div>
 						</li>
 						<li>
-							<div><img class="o2-2-1" src="../static/img/1199_thumb_min_G_1423505225674.jpg" /></div>
+							<div><img class="o2-2-1" src="{% static 'img/1199_thumb_min_G_1423505225674.jpg' %}"></div>
 							<div>
 								<p>lhsj_131******610(2017年10月15日 23:25:52)</p>
 								<p>评论： 喜欢 很好看 而且有活动很划算</p>
@@ -805,7 +807,7 @@
 							</div>
 						</li>
 						<li>
-							<div><img class="o2-2-1" src="../static/img/G_1505427910875044678.jpg" /></div>
+							<div><img class="o2-2-1" src="{% static 'img/G_1505427910875044678.jpg' %}"></div>
 							<div>
 								<p>lhsj_131******610(2017年10月15日 23:25:52)</p>
 								<p>评论： 喜欢 很好看 而且有活动很划算</p>
@@ -817,24 +819,24 @@
 				<div class="o-3">
 					<div class="o3-1">&nbsp; &nbsp; &nbsp; 买家show</div>
 					<div>
-						<a href="#"><img class="o3-2" src="../static/img/1431420054640944.jpg"/></a>
+						<a href="#"><img class="o3-2" src="{% static 'img/1431420054640944.jpg' %}"></a>
 					</div>
 				</div>
 			</div>
-		
+
 			<div class="box10">
 				<div class="y-1">
 					体验店(目前全国有236家直营体验店)
 				</div>
 				<div class="y-2">
 					<a href="#">
-						<img src="../static/img/1438394751654589.jpg"/>
-						<img style="margin-left: 4px;" src="../static/img/1438393917244993.jpg"/>
-						<img style="width: 391px; height: 196px;" src="../static/img/1461060893485519.jpg"/>
+						<img src="{% static 'img/1438394751654589.jpg' %}">
+						<img style="margin-left: 4px;" src="{% static 'img/1438393917244993.jpg' %}">
+						<img style="width: 391px; height: 196px;" src="{% static 'img/1461060893485519.jpg' %}">
 					</a>
 				</div>
 			</div>
-			
+
 			<div class="box11">
 				<div class="k-1">
 					<div class="k1-1">
@@ -882,82 +884,82 @@
 							<dd><a href="#">怡景中心城店</a></dd>
 							<dd><a href="#">怡景中心城店</a></dd>
 						</dl>
-					</div>		
+					</div>
 				</div>
 				<div class="k-2">
-					<img style="margin-left: 30px;" src="../static/img/1471511231313899.jpg" />
+					<img style="margin-left: 30px;" src="{% static 'img/1471511231313899.jpg' %}">
 				</div>
 				<div class="k-3">
 					<ul class="k3-1">
 						<li><a href="#">
 							<span>+</span>
-							<span>查看实体店</span><br />
+							<span>查看实体店</span><br>
 							&nbsp;&nbsp;<span>View Store</span>
 						</a></li>
 						<li><a href="#">
 							<span>+</span>
-							<span>附近交通</span><br />
+							<span>附近交通</span><br>
 							&nbsp;&nbsp;<span>Direction</span>
 						</a></li>
 						<li><a href="#">
 							<span>+</span>
-							<span>发送店地址到手机</span><br />
+							<span>发送店地址到手机</span><br>
 							<span>Send To Mobile</span>
 						</a></li>
 						<li><a href="#">
 							<span>+</span>
-							<span>营业时间</span><br />
+							<span>营业时间</span><br>
 							&nbsp;<span>Business  Hours</span>
 						</a></li>
 					</ul>
 					<div class="k3-2">
-						<p class="k4-1" >免费预约直营店验光<br/>BOOKING</p>
+						<p class="k4-1">免费预约直营店验光<br>BOOKING</p>
 					</div>
-				</div>	
+				</div>
 			</div>
-			
+
 			<div class="box12">
 				<div class="z-1">
 					<ul class="z1-1">
 						<li>
-							<p class="z1-2"><i class="iconfont">&#xe604;</i><span>线上线下同价</span></p>
-							<p class="z1-3">Online Single-Phase & Three-phase</p>
+							<p class="z1-2"><i class="iconfont"></i><span>线上线下同价</span></p>
+							<p class="z1-3">Online Single-Phase &amp; Three-phase</p>
 						</li>
 						<li>
-							<p class="z1-2"><i class="iconfont">&#xe615;</i><span>港式21步验光</span></p>
+							<p class="z1-2"><i class="iconfont"></i><span>港式21步验光</span></p>
 							<p class="z1-3">Hong Kong Style Step 21 Optomety</p>
 						</li>
 						<li>
-							<p class="z1-2"><i class="iconfont">&#xe607;</i><span>线上预约线下体验</span></p>
+							<p class="z1-2"><i class="iconfont"></i><span>线上预约线下体验</span></p>
 							<p class="z1-3">Go Online Booking and Offline Experience</p>
 						</li>
 						<li>
-							<p class="z1-2"><i class="iconfont">&#xe665;</i><span>全国连锁</span></p>
+							<p class="z1-2"><i class="iconfont"></i><span>全国连锁</span></p>
 							<p class="z1-3">Across The country Have Chain Stores</p>
 						</li>
 						<li>
-							<p class="z1-2"><i class="iconfont">&#xe603;</i><span>MTC厂家直销</span></p>
+							<p class="z1-2"><i class="iconfont"></i><span>MTC厂家直销</span></p>
 							<p class="z1-3">Mtc factory Direct Sales Of Products</p>
 						</li>
 						<li>
-							<p class="z1-2"><i class="iconfont">&#xe62a;</i>
+							<p class="z1-2"><i class="iconfont"></i>
 							<span>互联网药品信息服务资格证书</span>
 							<!--<span>证号:（粤）经营性20150019</span>-->
 							</p>
 							<p class="z1-3">InternetDrugInformationServiceQualification</p>
 						</li>
 						<li>
-							<p class="z1-2"><i class="iconfont">&#xe61d;</i>
+							<p class="z1-2"><i class="iconfont"></i>
 							<span>医疗器械许可证</span>
 							<span>粤SZ10484</span>
 							</p>
 							<p class="z1-3">The company Has Medical Device License</p>
 						</li>
 						<li>
-							<p class="z1-2"><i class="iconfont">&#xe606;</i><span>国内O2O配镜电商</span></p>
+							<p class="z1-2"><i class="iconfont"></i><span>国内O2O配镜电商</span></p>
 							<p class="z1-3">The Best O2O Glasses Company In China</p>
 						</li>
-	
+
 					</ul>
 				</div>
 				<div class="z-2">
@@ -965,9 +967,9 @@
 				</div>
 				<div class="z-3">
 					<p class="z3-1">
-						<span><i class="iconfont">&#xe607;</i> LOHO眼镜生活在全国已有实体体验店<span class="z3-1-1">236</span>家</span>
+						<span><i class="iconfont"></i> LOHO眼镜生活在全国已有实体体验店<span class="z3-1-1">236</span>家</span>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<span><i class="iconfont">&#xe637;</i> 客服电话：<span class="z3-1-2">400-887-1920</span> <span class="z3-1-3">09:00-23:00(周一至周日)</span></span>
+						<span><i class="iconfont"></i> 客服电话：<span class="z3-1-2">400-887-1920</span> <span class="z3-1-3">09:00-23:00(周一至周日)</span></span>
 					</p>
 					<div class="z3-2">
 						<ul>
@@ -1008,7 +1010,7 @@
 						</ul>
 						<ul class="z3-2-1">
 							<li class="z3-2-2" style="height: 100px;width: 100px; background: #fff;">
-								<img style="width: 90px; height: 90px; margin: 5px;" src="../static/img/QRcode.png" />
+								<img style="width: 90px; height: 90px; margin: 5px;" src="{% static 'img/QRcode.png' %}">
 							</li>
 							<li class="z3-2-3">关注LOHO官方微信</li>
 						</ul>
@@ -1043,16 +1045,16 @@
 						<li><a href="#">中国眼镜网</a></li>
 						<li><a href="#">批发网</a></li>
 						<li><a href="#">申请友情链接</a></li>
-					
+
 					</ul>
 				</div>
 				<div class="z-5">
 					<p class="z5-1">
-						<img style="width: 52px; height: 55px;" src="../static/img/loho_87.jpg" />
-						<img style="width: 46px; height: 55px;" src="../static/img/loho_88.jpg" />
-						<img style="width: 56px; height: 55px;" src="../static/img/loho_89.jpg" />
-						<img style="width: 94px; height: 55px;" src="../static/img/loho_90.jpg" />
-						<img style="width: 93px; height: 55px;" src="../static/img/loho_92.jpg" />
+						<img style="width: 52px; height: 55px;" src="{% static 'img/loho_87.jpg' %}">
+						<img style="width: 46px; height: 55px;" src="{% static 'img/loho_88.jpg' %}">
+						<img style="width: 56px; height: 55px;" src="{% static 'img/loho_89.jpg' %}">
+						<img style="width: 94px; height: 55px;" src="{% static 'img/loho_90.jpg' %}">
+						<img style="width: 93px; height: 55px;" src="{% static 'img/loho_92.jpg' %}">
 					</p>
 					<p class="z5-2"><span>ICP备案证书号</span><span>:粤ICP备11106081号</span></p>
 					<p class="z5-2">© 2005-2017 深圳市乐活电子商务有限公司-时尚眼镜品牌 版权所有，并保留所有权利。</p>
@@ -1061,12 +1063,11 @@
 				<div class="z-6">
 					网站地图 友情链接 ERP系统
 				</div>
-				
+
 			</div>
 
 		</div>
-		
-		<img class="dingwei" style="position: absolute; right: 0; top:30%;" src="../static/img/dinwei.jpg" />
-		
+
+		<img class="dingwei" style="position: absolute; right: 0; top:30%;" src="{% static 'img/dinwei.jpg' %}">
 	</body>
 </html>

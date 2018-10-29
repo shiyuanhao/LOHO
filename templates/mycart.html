@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="font/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'font/iconfont.css' %}"/>
 		<style>
 			*{
 				margin: 0; padding: 0;
@@ -153,10 +154,10 @@
 				background: red; color: #fff; text-align: center;
 			}
 		</style>
-		<script src="js/jquery-1.12.3.js"></script>
-		<script src="js/jquery.cookie.js"></script>
-		<script src="js/mycart.js"></script>
-		<script src="js/gouwucelidedongxi.js"></script>
+		<script src="{% static 'js/jquery-1.12.3.js' %}"></script>
+		<script src="{% static 'js/jquery.cookie.js' %}"></script>
+		<script src="{% static 'js/mycart.js' %}"></script>
+		<script src="{% static 'js/gouwucelidedongxi.js' %}"></script>
 		<script>
 			$(function(){
 				if($.cookie("cart")){
@@ -172,36 +173,36 @@
 		<div class="t">
 			<div class="t-1">
 				您好，欢迎来到LOHO！  【     
-				<a href="#">登录</a>
+				<a href="/denglu/">登录</a>
 				|
-				<a href="#">注册</a>
+				<a href="/zhuce/">注册</a>
 				 】 | 
 				<a href="#">我的订单</a>|
-				<a href="#"><i class="iconfont">&#xe635;</i>购物车 <span style="color: red;" class="nmb">0</span></a>|
-				<i class="iconfont">&#xe637;</i>
+				<a href="#"><i class="iconfont"></i>购物车 <span style="color: red;" class="nmb">0</span></a>|
+				<i class="iconfont"></i>
 				 400-887-1920
 			</div>
 		</div>
 		<div class="g">
 			<div class="g-1">
-				<div class="g1-1"><a href="shouye.html"><img src="img/logo (1).png"/></a></div>
+				<div class="g1-1"><a href="shouye.html"><img src="{% static 'img/logo (1).png' %}"></a></div>
 				<div class="g1-2">
-					<input class="g12-1" type="text" value="搜索商品" /><input class="g12-2" type="button" value="搜索" />
+					<input class="g12-1" value="搜索商品" type="text"><input class="g12-2" value="搜索" type="button">
 				</div>
 			</div>
-			<div class="g-2">我的购物车</div>	
+			<div class="g-2">我的购物车</div>
 		</div>
-		
-	<!--获取json数据   开始-->	
+
+	<!--获取json数据   开始-->
 		<div class="f-1">
 			<ul class="f1-1">
-				<li><input class="f11-6" type="checkbox" checked="checked" />全选</li>
+				<li><input class="f11-6" checked="checked" type="checkbox">全选</li>
 				<li class="f11-1">商品</li>
 				<li class="f11-2">单价(元)</li>
 				<li class="f11-3">数量</li>
 				<li class="f11-4">金额(元)</li>
 				<li class="f11-5">操作</li>
-			</div>
+			</ul></div>
 			<div class="f1-2">
 				<!--<ul class="f12-1 clearfix">
 					<li class="f2-1"><input type="checkbox" checked/></li>
@@ -232,7 +233,7 @@
 			</div>
 			<div class="d">
 				<div class="d-1">
-					<input type="checkbox" checked="checked" />
+					<input checked="checked" type="checkbox">
 					<a href="#">删除选中</a>
 					<a href="#">清空购物车</a>
 					<a href="#">清除失效宝贝</a>
@@ -242,17 +243,17 @@
 					<span class="d2-2">¥ 0</span>
 					<a class="d2-3" href="#">去结算</a>
 				</div>
-			</div>	
-		</div>
+			</div>
+
 	<!--结束-->
-	
+
 		<div class="z-5">
 			<p class="z5-1">
-				<img style="width: 52px; height: 55px;" src="img/loho_87.jpg" />
-				<img style="width: 46px; height: 55px;" src="img/loho_88.jpg" />
-				<img style="width: 56px; height: 55px;" src="img/loho_89.jpg" />
-				<img style="width: 94px; height: 55px;" src="img/loho_90.jpg" />
-				<img style="width: 93px; height: 55px;" src="img/loho_92.jpg" />
+				<img style="width: 52px; height: 55px;" src="{% static 'img/loho_87.jpg' %}">
+				<img style="width: 46px; height: 55px;" src="{% static 'img/loho_88.jpg' %}">
+				<img style="width: 56px; height: 55px;" src="{% static 'img/loho_89.jpg' %}">
+				<img style="width: 94px; height: 55px;" src="{% static 'img/loho_90.jpg' %}">
+				<img style="width: 93px; height: 55px;" src="{% static 'img/loho_92.jpg' %}">
 			</p>
 			<p class="z5-2"><span>ICP备案证书号</span><span>:粤ICP备11106081号</span></p>
 			<p class="z5-2">© 2005-2017 深圳市乐活电子商务有限公司-时尚眼镜品牌 版权所有，并保留所有权利。</p>
