@@ -12,17 +12,31 @@ from loho.models import User
 
 
 def shouye(request):
-    return render(request,'shouye.html')
+    username = request.COOKIES.get('username')
+    return render(request,'shouye.html',context={'username':username})
 
 
 def denglu(request):
-    return render(request,'denglu.html')
-
+    if request.method == 'GET':
+        return render(request,'denglu.html')
+    elif request.method == 'POST':
+        tel = request.POST.get('tel')
+        password = request.POST.get('password')
+        users = User.objects.filter(tel=tel).filter(password=password)
+        if users.exists():
+            user = users.first()
+            user.token = uuid.uuid5(uuid.uuid4(), 'login')
+            response = redirect('loho:shouye')
+            response.set_cookie('username',tel)
+            return response
+        else:
+            return HttpResponse('该手机号码未注册或者密码错误')
 
 def zhuce(request):
     if request.method == 'GET':
         return render(request,'zhuce.html')
     elif request.method == 'POST':
+
         tel = request.POST.get('tel')
         password = request.POST.get('password')
         invitation = request.POST.get('invitation')
@@ -35,7 +49,7 @@ def zhuce(request):
             user.token = uuid.uuid5(uuid.uuid4(), 'register')
             user.save()
             response = redirect('loho:shouye')
-            response.set_cookie('token',user.token)
+            response.set_cookie('username',tel)
             return response
         except Exception as e :
             return HttpResponse('注册失败'+e)
@@ -49,6 +63,7 @@ def detail(request):
     return render(request,'detail.html')
 
 from PIL import Image, ImageDraw, ImageFont
+
 def verifycode(request):
     # 创建图片
     width = 100
@@ -110,6 +125,10 @@ def verifycode(request):
     json_code = json.dumps("../"+imgdir)
     response = HttpResponse(imgdir)
     response.set_cookie('code',rand_str)
+    return render(context={'rand_str':rand_str})
+
+
+def logout(request):
+    response = redirect('loho:shouye')
+    response.delete_cookie('username')
     return response
-
-

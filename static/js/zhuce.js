@@ -4,7 +4,8 @@ $(function(){
 	var yanzen2 = false;
 	var yanzen3 = false;
 	var yanzen4 = false;
-	var yanzen5 = false
+	var yanzen5 = false;
+	var yanzen6 = false
 
 //	手机号
 	$(".f1-2-1").keyup(function(){
@@ -22,11 +23,11 @@ $(function(){
 	$(".f1-2-2").keyup(function () {
 		if ($(this).val() == ('loho1314')){
 			$(".f1-2 span").eq(1).html("-邀请码正确");
-			yanzen5 = true
+			yanzen2 = true
 		}
 		else {
 			$(".f1-2 span").eq(1).html("-邀请码错误");
-			yanzen5 = false
+			yanzen2 = false
 		}
     })
 //	密码
@@ -48,49 +49,49 @@ $(function(){
 				$(".f1-2 span").eq(2).html("-密码强度为高级！");
 				$(".list1").children().css("background","green");
 			}	
-			yanzen2 = true;
+			yanzen3 = true;
 		}
 		else{
 			$(".f1-2 span").eq(2).html("-请输入最少六位密码");
-			yanzen2 = false;
+			yanzen3 = false;
 		}
 	})
 //	确认密码
 	$(".f1-2-4").keyup(function(){
 		if($(this).val()==($(".f1-2-3").val())){
 			$(".f1-2 span").eq(3).html("-密码正确！");
-			yanzen3 = true;
+			yanzen4 = true;
 		}
 		else{
 			$(".f1-2 span").eq(3).html("-密码不相符");
-			yanzen3 = false;
+			yanzen4 = false;
 		}
 	})
 //  确认验证码
 	$(".f1-2-5").keyup(function () {
-		if ($(this).val().toLowerCase() == $.cookie('code').toLowerCase()){
+		if ($(this).val().toLowerCase() == 't5ce'){
 			$(".f1-2 span").eq(4).html("-验证码正确！");
-			yanzen4 = true;
+			yanzen5 = true;
         }
 		else {
 			$(".f1-2 span").eq(4).html("-验证码不正确！");
-			yanzen4 = false;
+			yanzen5 = false;
 		}
     })
 //	用户协议勾选
 	function cheched(){
 		if($(".f1_2_6").attr('checked')){
-			yanzen4 = true;
+			yanzen6 = true;
 		}
 		else{
-			yanzen4 = false;
+			yanzen6 = false;
 		}
 	}
 	
 	$(".m-1").click(function(){
 
 		cheched();
-		if(yanzen1==true && yanzen2==true && yanzen3==true && yanzen4==true && yanzen5==true){
+		if(yanzen1==true && yanzen2==true && yanzen3==true && yanzen4==true && yanzen5==true && yanzen6==true){
 					
 			$.cookie("user", $(".f1-2-1").val(), {expires:30, path:"/"});
 		    $.cookie("password", $(".f1-2-3").val(), {expires:30, path:"/"});
@@ -106,8 +107,8 @@ $(function(){
 					//console.log(xhr.responseText);
 					var data = JSON.parse(xhr.responseText);
 					if(data.status==1){
-						//console.log("注册成功");
-						location.href = "denglu.html";
+						console.log("注册成功");
+						location.href = "/shouye/";
 					}
 					else{
 						alert(data.msg);
@@ -121,7 +122,7 @@ $(function(){
 
 		}
 		else{
-			$(".f1-2 span").eq(5).html("-登录失败！");
+			$(".f1-2 span").eq(5).html("-注册失败！");
 		}
 
 	})

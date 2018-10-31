@@ -27,7 +27,7 @@ $(function(){
 				console.log(xhr.responseText);
 				var data = JSON.parse(xhr.responseText);
 				if(data.status==1){
-					location.href = "shouye.html";
+					location.href = "/shouye/";
 				}
 				else{
 					alert(data.msg);

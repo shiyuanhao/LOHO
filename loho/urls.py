@@ -9,5 +9,6 @@ urlpatterns = [
     url(r'^zhuce/$',views.zhuce,name='zhuce'),
     url(r'^mycart/$',views.mycart,name='mycart'),
     url(r'^detail/$',views.detail,name='detail'),
-    url(r'^verifycode/$',views.verifycode,name='verifycode')
+    url(r'^verifycode/$',views.verifycode,name='verifycode'),
+    url(r'^logout/$',views.logout,name='logout')
 ]
