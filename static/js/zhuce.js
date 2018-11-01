@@ -26,7 +26,7 @@ $(function(){
 			yanzen2 = true
 		}
 		else {
-			$(".f1-2 span").eq(1).html("-邀请码错误");
+			$(".f1-2 span").eq(1).html("-邀请码错误,请联系服务人员获取");
 			yanzen2 = false
 		}
     })
@@ -52,7 +52,7 @@ $(function(){
 			yanzen3 = true;
 		}
 		else{
-			$(".f1-2 span").eq(2).html("-请输入最少六位密码");
+			$(".f1-2 span").eq(2).html("-请输入最少六位最多十八位密码");
 			yanzen3 = false;
 		}
 	})
@@ -69,12 +69,12 @@ $(function(){
 	})
 //  确认验证码
 	$(".f1-2-5").keyup(function () {
-		if ($(this).val().toLowerCase() == 't5ce'){
+		if ($(this).val().toLowerCase() == $.cookie("code").toLowerCase()){
 			$(".f1-2 span").eq(4).html("-验证码正确！");
 			yanzen5 = true;
         }
 		else {
-			$(".f1-2 span").eq(4).html("-验证码不正确！");
+			$(".f1-2 span").eq(4).html("-验证码不正确！请重新输入或者点击图片刷新");
 			yanzen5 = false;
 		}
     })
@@ -92,34 +92,34 @@ $(function(){
 
 		cheched();
 		if(yanzen1==true && yanzen2==true && yanzen3==true && yanzen4==true && yanzen5==true && yanzen6==true){
-					
-			$.cookie("user", $(".f1-2-1").val(), {expires:30, path:"/"});
-		    $.cookie("password", $(".f1-2-3").val(), {expires:30, path:"/"});
 
-			//ajax
-			var xhr = new XMLHttpRequest();
-			xhr.open("post", "http://localhost/LOHO_glass/index/register.php", true);
-			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-			var str = "user="+$(".f1-2-1").val()  + "&password="+$(".f1-2-3").val() ;
-			xhr.send(str);
-			xhr.onreadystatechange = function () {
-				if (xhr.readyState==4 && xhr.status==200) {
-					//console.log(xhr.responseText);
-					var data = JSON.parse(xhr.responseText);
-					if(data.status==1){
-						console.log("注册成功");
-						location.href = "/shouye/";
-					}
-					else{
-						alert(data.msg);
-					}
-					//json解析
-					//如果注册成功则进入登录页面
-					//如果失败则弹出提示信息
-				}
-			}
+			$(".f-1").submit()
 
-
+			// $.cookie("user", $(".f1-2-1").val(), {expires:30, path:"/"});
+		    // $.cookie("password", $(".f1-2-3").val(), {expires:30, path:"/"});
+			//
+			// //ajax
+			// var xhr = new XMLHttpRequest();
+			// xhr.open("post", "http://localhost/LOHO_glass/index/register.php", true);
+			// xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+			// var str = "user="+$(".f1-2-1").val()  + "&password="+$(".f1-2-3").val() ;
+			// xhr.send(str);
+			// xhr.onreadystatechange = function () {
+			// 	if (xhr.readyState==4 && xhr.status==200) {
+			// 		//console.log(xhr.responseText);
+			// 		var data = JSON.parse(xhr.responseText);
+			// 		if(data.status==1){
+			// 			console.log("注册成功");
+			// 			location.href = "/shouye/";
+			// 		}
+			// 		else{
+			// 			alert(data.msg);
+			// 		}
+			// 		//json解析
+			// 		//如果注册成功则进入登录页面
+			// 		//如果失败则弹出提示信息
+			// 	}
+			// }
 		}
 		else{
 			$(".f1-2 span").eq(5).html("-注册失败！");

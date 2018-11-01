@@ -220,15 +220,14 @@
             color: #fff;
             line-height: 22px;
         }
-
-        #code {
+        #imgvcode{
             position: relative;
-            top: 12px;
+            top: 15px;
         }
     </style>
 </head>
 <body>
-<form action="/denglu/" method="post">
+<form action="/denglu/" method="post" class="f-0">
     {% csrf_token %}
 <div class="bg">
     <div class="top">
@@ -257,10 +256,10 @@
                         <li>
                             <input style="width: 230px;" placeholder="手机号" name="tel" type="text">
                         </li>
-                        <li><input style="width: 230px;" placeholder="请输入您的密码" name="password" type="text"></li>
+                        <li><input style="width: 230px;" placeholder="请输入您的密码" name="password" type="password"></li>
                         <li>
-                            <input style="width: 70px;" placeholder="验证码" name="" type="text">
-                            <img id="code" src="{% static 'img/code/1.png' %}">
+                            <input style="width: 70px;" placeholder="验证码" name="" class="f1-2-5" type="text">
+                            <img src="/verifycode/?1" id="imgvcode" /><span id="code"></span>
                         </li>
                     </ul>
 
@@ -271,7 +270,8 @@
                     <span class="d1-1">自动登录</span>
                     <a href="/zhuce/">免费注册</a>
                 </div>
-                <input class="d-2" type="submit" value="登录">
+                <input class="d-2" type="button" value="登录">
+                <p id="tishi" style="text-align: center"></p>
             </div>
 
         </div>
@@ -380,7 +380,11 @@
     </div>
 
 </div>
-
+    <script>
+         $('#imgvcode').css('cursor', 'pointer').click(function () {
+             $('#imgvcode').attr('src', $('#imgvcode').attr('src') +1)
+       });
+    </script>
 
 </body>
 </html>

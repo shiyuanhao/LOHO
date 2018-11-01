@@ -111,21 +111,13 @@ def verifycode(request):
 
     # 释放
     del draw
-
     # 文件操作
-    # buff = io.BytesIO()
-    # image.save(buff, 'png')  # 保存在内存中
-    file_list = os.listdir("static/img/code")
-    if len(file_list) > 5:
-        for file in file_list:
-            os.remove(os.path.join("static/img/code/"+file))
+    buff = io.BytesIO()
+    image.save(buff, 'png')  # 保存在内存中
+    response = HttpResponse(buff.getvalue(), 'image/png')
+    response.set_cookie("code",rand_str)
+    return response
 
-    imgdir = 'static/img/code/'+str(random.randrange(10000))+".png"
-    image.save(imgdir,'png')
-    json_code = json.dumps("../"+imgdir)
-    response = HttpResponse(imgdir)
-    response.set_cookie('code',rand_str)
-    return render(context={'rand_str':rand_str})
 
 
 def logout(request):
