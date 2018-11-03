@@ -4,9 +4,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="{% static 'css/shouye.css' %}" />
+        <link rel="stylesheet" href="{% static "css/swiper.css" %}">
 		<link rel="stylesheet" href="{% static 'font/iconfont.css'%}" />
+        <link rel="stylesheet" href="{% static 'css/shouye.css' %}" />
 		<script src="{% static 'js/jquery-1.12.3.js' %}"></script>
+        <script src="{% static 'js/swiper.js' %}">
+        </script>
 		<script src="{% static 'js/ajax.js' %}"></script>
 		<script src="{% static 'js/shouye.js' %}"></script>
 		<script src="{% static 'js/jquery.cookie.js' %}"></script>
@@ -425,25 +428,46 @@
 		</div>
 	<!--结束-->
 
+    <div class="swiper-container" id="topSwiper">
+        <div class="swiper-wrapper">
+            {% for img in imgs %}
+                <div class="swiper-slide"><img src="{% static img.img %}" alt=""></div>
+            {% endfor %}#}
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
 	<!--logo轮播图-->
-		<div class="lunbo">
-			<ul id="list1">
+{#		<div class="swiper-container" id="swiper-container">#}
+{#            <div class="swiper-wrapper">#}
+{#			    <ul id="list1">#}
+{#                    {% for img in imgs %}#}
+{#                        <li>#}
+{#                            <img src="{% static img.img %}" alt="">#}
+{#                        </li>#}
+{##}
+{#                    {% endfor %}#}
+{#                </ul>#}
 				<!--<li><a href="#"><img style="width: 100%; height: 500px;" src="img/20170916163153_91818.jpg"/></a></li>
 				<li><a href="#"><img style="width: 100%; height: 500px;" src="img/20170911185441_83175.jpg"/></a></li>
 				<li><a href="#"><img style="width: 100%; height: 500px;" src="img/20170818150250_63464.jpg"/></a></li>
 				<li><a href="#"><img style="width: 100%; height: 500px;" src="img/20170915164204_22747.jpg"/></a></li>-->
-			</ul>
-			<ul id="list2">
-				<!--<li class="active">1</li>
-				<li>2</li>
-				<li>3</li>
-				<li>4</li>-->
-			</ul>
 
-			<div id="prev"><i class="iconfont"></i></div>
-			<div id="next"><i class="iconfont"></i></div>
+{#			<ul id="list2">#}
+{#				<!--<li class="active">1</li>#}
+{#				<li>2</li>#}
+{#				<li>3</li>#}
+{#				<li>4</li>-->#}
+{#			</ul>#}
 
-		</div>
+{#			<div id="prev" class=""><i class="iconfont swiper-button-next"></i></div>#}
+{#			<div id="next" class=""><i class="iconfont swiper-button-prev"></i></div>#}
+{#            </div>#}
+{#		</div>#}
 
 		<div class="bg">
 			<div class="box1">
@@ -755,7 +779,7 @@
 
 			<div class="box8">
 				<div class="x-1">
-					<a href="#"><img src="{% static 'img/1502961222327943.jpg' %}" <="" a="">
+					<a href="#"><img src="{% static 'img/1502961222327943.jpg' %}">
 				</a></div><a href="#">
 				</a><div class="x-2"><a href="#">
 					</a><div><a href="#">

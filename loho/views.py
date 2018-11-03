@@ -8,12 +8,17 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from loho.models import User
+from loho.models import User, Wheel
 
 
 def shouye(request):
+    imgs = Wheel.objects.all()
     username = request.COOKIES.get('username')
-    return render(request,'shouye.html',context={'username':username})
+    data = {
+        'imgs':imgs,
+        'username':username,
+    }
+    return render(request,'shouye.html',context=data)
 
 
 def denglu(request):
