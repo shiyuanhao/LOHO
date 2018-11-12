@@ -104,29 +104,29 @@ $(function(){
         paginationClickable: true,
         spaceBetween: 5,
         centeredSlides: true,
-        autoplay: 1000,
+        autoplay: 2500,
         autoplayDisableOnInteraction: false,
         loop: true
     });
 
-
-	var arr = [];
-	$.get("../static/json/mycart.json", function(data){
-		var arr = data;
-		
-		for(var i=0; i<arr.length; i++){
-			var obj = arr[i];
-			
-			$('<li><a href="#"><img src="'+obj.bigImg+'"/></a></li>').appendTo(".bt");
-
-			$(".bt").on("click","li", function(){
-				var index = $(this).index();
-				var obj = arr[index]
-				location.href = "detail.html?id="+obj.id;
-			})
-		}
-
-	})
+	//详情页
+	// var arr = [];
+	// $.get("../static/json/mycart.json", function(data){
+	// 	var arr = data;
+	//
+	// 	for(var i=0; i<arr.length; i++){
+	// 		var obj = arr[i];
+	//
+	// 		$('<li><a href="#"><img src="'+obj.bigImg+'"/></a></li>').appendTo(".bt");
+	//
+	// 		$(".bt").on("click","li", function(){
+	// 			var index = $(this).index();
+	// 			var obj = arr[index]
+	// 			location.href = "detail.html?id="+obj.id;
+	// 		})
+	// 	}
+	//
+	// })
 	
 	
 	$(window).scroll(function(){

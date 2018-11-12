@@ -31,14 +31,14 @@
 		<div id="hd">
 			<div class="tp">
 				<ul class="tp1">
-                    {% if username %}
-                        <li>尊敬的{{ username }}用户~欢迎来到LOHO!</li>
+                    {% if tel %}
+                        <li>尊敬的{{ tel }}用户~欢迎来到LOHO!</li>
 					    <li><a href="/denglu/" style="display: none">[请登陆]</a></li>
 					    <li><a href="/zhuce/" style="display: none">[注册]</a></li>
 					    <li><a href="#">收藏LOHO</a></li>
                         <li><a href="/logout/">注销账号</a></li>
                     {% else %}
-                        <li>HI~欢迎来到LOHO!</li>
+                        <li>{{ tishi }}</li>
                         <li><a href="/denglu/" >[请登陆]</a></li>
 					    <li><a href="/zhuce/" >[注册]</a></li>
 					    <li><a href="#">收藏LOHO</a></li>
@@ -47,8 +47,8 @@
 				</ul>
 				<ul class="tp2">
 					<li><a href="#">MY LOHO</a></li>
-					<li><a href="#">我的订单</a></li>
-					<li><a href="/mycart/"><img class="img1" src="{% static 'img/购物车.png' %}">购物车(<span style="color: red;" class="nmb">0</span>)</a></li>
+{#					<li><a href="#">我的订单</a></li>#}
+					<li><a href="/mycart/"><img class="img1" src="{% static 'img/购物车.png' %}">购物车<span style="color: red;" class="nmb"></span></a></li>
 					<li><a href="#">手机版</a></li>
 					<li><a href="#"><img class="img2" src="{% static 'img/电话.png' %}">400-8871920 (09:00-23:00)</a></li>
 					<li><a href="#">
@@ -432,7 +432,7 @@
         <div class="swiper-wrapper">
             {% for img in imgs %}
                 <div class="swiper-slide"><img src="{% static img.img %}" alt=""></div>
-            {% endfor %}#}
+            {% endfor %}
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
@@ -536,12 +536,19 @@
 						<a href="#"><img src="{% static 'img/1489829778943400.jpg' %}"></a>
 					</div>
 					<div class="bo2-3">
-						<ul class="bo2-1-4 bt">
-
-
-
-
-						</ul>
+						<ul class="bo2-1-4">
+                            {% for goods in goodss %}
+                                <li>
+                                    <a href="{% url 'loho:detail'  goods.id  %}">
+                                        <img src="{% static goods.bigImg %}" alt="">
+                                    </a>
+                                </li>
+                            {% endfor %}
+{#                            <li><a href="{% url 'loho:detail' id %}"><img src="{% static 'img/1506507493610664.jpg' %}"></a></li>#}
+{#							<li><a href="{% url 'loho:detail' id %}"><img src="{% static 'img/1506507516457263.jpg' %}"></a></li>#}
+{#							<li><a href="{% url 'loho:detail' id %}"><img src="{% static 'img/1506507510124942.jpg' %}"></a></li>#}
+{#							<li><a href="{% url 'loho:detail' id %}"><img src="{% static 'img/1506507503746971.jpg' %}"></a></li>#}
+                        </ul>
 					</div>
 				</div>
 			</div>

@@ -1,23 +1,41 @@
 $(function(){
-	
+
 	var yanzen1 = false;
 	var yanzen2 = false;
 	var yanzen3 = false;
 	var yanzen4 = false;
 	var yanzen5 = false;
-	var yanzen6 = false
+	var yanzen6 = false;
 
 //	手机号
 	$(".f1-2-1").keyup(function(){
-		var phone = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(17[0-9])|(18[0-9])|199)\d{8}$/;
-		if(phone.test($(this).val())){
-			$(".f1-2 span").eq(0).html("-该手机号码可以注册！");
-			yanzen1 = true;
-		}
-		else{
-			$(".f1-2 span").eq(0).html("-手机号码错误");
+		var phone = /^1[3|5|7|8|]\d{9}$/
+		if(phone.test($(this).val())) {
+            $.get('/checktel/', {'tel': $(this).val()}, function (response) {
+                if (response.status == 1) {
+                    $(".f1-2 span").eq(0).html("-该手机号码可以注册！");
+                    yanzen1 = true;
+                } else {
+                    $(".f1-2 span").eq(0).html(response.msg);
+                    yanzen1 = false;
+                }
+            })
+        }else {
+			$(".f1-2 span").eq(0).html("-手机号码错误！")
 			yanzen1 = false;
 		}
+
+
+
+
+
+		// 	$(".f1-2 span").eq(0).html("-该手机号码可以注册！");
+		// 	yanzen1 = true;
+		// }
+		// else{
+		// 	$(".f1-2 span").eq(0).html("-手机号码错误");
+		// 	yanzen1 = false;
+		// }
 	})
 //  邀请码
 	$(".f1-2-2").keyup(function () {
@@ -48,7 +66,7 @@ $(function(){
 			if(qiang.test($(this).val())){
 				$(".f1-2 span").eq(2).html("-密码强度为高级！");
 				$(".list1").children().css("background","green");
-			}	
+			}
 			yanzen3 = true;
 		}
 		else{
@@ -87,7 +105,7 @@ $(function(){
 			yanzen6 = false;
 		}
 	}
-	
+
 	$(".m-1").click(function(){
 
 		cheched();
@@ -122,16 +140,16 @@ $(function(){
 			// }
 		}
 		else{
-			$(".f1-2 span").eq(5).html("-注册失败！");
+			$(".f1-2 span").eq(5).html("-注册失败,请确保所有选项均为有效！");
 		}
 
 	})
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
 })

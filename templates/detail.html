@@ -10,26 +10,27 @@
 		<script src="{% static 'js/ajax.js' %}"></script>
 		<link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}"/>
 		<script src="{% static 'js/detail1.js' %}"></script>
-		<script src="{% static 'js/gouwucelidedongxi.js' %}"></script>
-		<script>
-			$(function(){
-				var count = gouwuce();
-				$(".nmb").html(count);
-			})
-		</script>
+{#		<script src="{% static 'js/gouwucelidedongxi.js' %}"></script>#}
+{#		<script>#}
+{#			$(function(){#}
+{#				var count = gouwuce();#}
+{#				$(".nmb").html(count);#}
+{#			})#}
+{#		</script>#}
 	</head>
 	<body>
 		<div id="hd">
 			<div class="tp">
-				<ul class="tp1">
-					<li><a href="#">Hi~欢迎来到LOHO!</a></li>
-					<li><a href="/denglu/">[请登陆]</a></li>
-					<li><a href="/zhuce/">[注册]</a></li>
+				{% if tel %}
+                    <ul class="tp1">
+					<li><a href="#">Hi~尊敬的{{ tel }}用户，欢迎来到LOHO!</a></li>
+{#					<li><a href="/denglu/">[请登陆]</a></li>#}
+{#					<li><a href="/zhuce/">[注册]</a></li>#}
 					<li><a href="#">收藏LOHO</a></li>
 				</ul>
 				<ul class="tp2">
 					<li><a href="#">MY LOHO</a></li>
-					<li><a href="#">我的订单</a></li>
+{#					<li><a href="#">我的订单</a></li>#}
 					<li><a href="/mycart/"><img class="img1" src="{% static 'img/购物车.png' %}">购物车(<span style="color: red;" class="nmb">0</span>)</a></li>
 					<li><a href="#">手机版</a></li>
 					<li><a href="#"><img class="img2" src="{% static 'img/电话.png' %}">400-8871920 (09:00-23:00)</a></li>
@@ -37,6 +38,24 @@
 						<input class="tp-1" type="text"><button class="tp-2" type="submit">搜索</button>
 					</a></li>
 				</ul>
+                {% else %}
+                    <ul class="tp1">
+					<li><a href="#">Hi~欢迎来到LOHO!</a></li>
+					<li><a href="/denglu/">[请登陆]</a></li>
+					<li><a href="/zhuce/">[注册]</a></li>
+					<li><a href="#">收藏LOHO</a></li>
+				</ul>
+				<ul class="tp2">
+					<li><a href="#">MY LOHO</a></li>
+{#					<li><a href="#">我的订单</a></li>#}
+{#					<li><a href="/mycart/"><img class="img1" src="{% static 'img/购物车.png' %}">购物车(<span style="color: red;" class="nmb">0</span>)</a></li>#}
+					<li><a href="#">手机版</a></li>
+					<li><a href="#"><img class="img2" src="{% static 'img/电话.png' %}">400-8871920 (09:00-23:00)</a></li>
+					<li><a href="#">
+						<input class="tp-1" type="text"><button class="tp-2" type="submit">搜索</button>
+					</a></li>
+				</ul>
+				{% endif %}
 			</div>
 
 			<div class="td">
@@ -46,7 +65,7 @@
 					<div class="td-3"><a href="#">m 查看店铺</a></div>
 				</div>
 				<div class="td2">
-					<div class="td-4"><a href="shouye.html"><img src="{% static 'img/logo.png' %}"></a></div>
+					<div class="td-4"><a href="#"><img src="{% static 'img/logo.png' %}"></a></div>
 				</div>
 				<div class="td3">
 					<div class="td-5"><a href="#"><img src="{% static 'img/1465203303405363.jpg' %}"></a></div>
@@ -56,7 +75,7 @@
 			<div class="tb">
 				<div class="nav">
 					<ul class="nav-1">
-						<li><a href="shouye.html">首页</a></li>
+						<li><a href="{% url 'loho:shouye' %}">首页</a></li>
 						<li><a href="#">新品上市</a></li>
 						<li class="nav1-1"><a href="#">
 							男款眼镜
@@ -414,24 +433,25 @@
 			<a href="#">首页&gt;</a>
 			<a href="#">眼镜&gt;</a>
 			<a href="#">男款眼镜&gt;</a>
-			 LOHO 光学镜架 金属 枪色金属+玳瑁色板材 复古款 GX9034-C2
+			 {{ goods.name }}
 		</div>
 
 		<div class="k-1">
 			<div class="k1-2">
+{#                商品详情页#}
 				<div class="k2-1">
 					<div class="k2-1-1">
-						<!--<img class="img1" style="width: 600px; height: 237px;" src="img/detail img/G_1479874651263638870.jpg" />-->
+						<img class="img1" style="width: 600px; height: 237px;" src="{% static goods.bigImg %}" />
 						<div style="display: none;" class="k211-1"></div>
 					</div>
 					<div class="k2-1-2">
-						<!--<img class="img3" style=" position: relative; left: 0; top: 0; width: 900px; height: 600px;" src="img/detail img/G_1479874651263638870.jpg" />-->
+						<img class="img3" style=" position: relative; left: 0; top: 0; width: 900px; height: 600px;" src="{% static goods.bigImg %}" />
 					</div>
 					<div class="k2-1-3">
 						<ul class="k212-1">
-							<!--<li><img style="width: 162px; height: 65px;" src="img/detail img/G_1479874651263638870.jpg"</li>
-							<li><img style="width: 162px; height: 65px;" src="img/detail img/G_1480468559080233329.jpg"</li>
-							<li><img style="width: 162px; height: 65px;" src="img/detail img/G_1480560734221768497.jpg"</li>-->
+							<li><img style="width: 162px; height: 65px;" src="{% static goods.zhongImg1 %}"></li>
+							<li><img style="width: 162px; height: 65px;" src="{% static goods.zhongImg2 %}"></li>
+							<li><img style="width: 162px; height: 65px;" src="{% static goods.zhongImg3 %}"></li>
 						</ul>
 					</div>
 					<div class="k2-1-4">
@@ -455,11 +475,11 @@
 				</div>
 				<div class="k2-2">
 					<div class="k2-2-1">
-						<!--<h2>LOHO 光学镜架 金属 枪色金属+玳瑁色板材 复古款 GX9034-C2</h2>-->
+						<h2>{{ goods.name }}</h2>
 					</div>
 					<div class="k2-2-2">
 						<ul class="a-1">
-							<!--<li><span>LOHO价：</span><span class="a1-1">￥ 599</span></li>-->
+							<li><span>LOHO价：</span><span class="a1-1">￥ {{ goods.price }}</span></li>
 							<li>已售：150 副销售详情用户评价：(已有7人评价)</li>
 							<li class="clearfix">
 								<span class="a1-2">颜色</span>
@@ -477,21 +497,46 @@
 								</span>
 							</li>
 							<li>
+{#                                加减框#}
 								<span>数量</span>
-								<a class="a1-3" href="#">-</a>
-								<input class="a1-4" value="1" type="number">
-								<a class="a1-3" href="#">+</a>
+								<button class="a1-3 subbt" goodsid="{{ goods.id }}">-</button>
+                                <b class="a1-4" >1</b>
+								<button class="a1-3 addbt" goodsid="{{ goods.id }}">+</button>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<span class="a1-5">在线咨询</span>
+								<span class="a1-5" >在线咨询</span>
 							</li>
 						</ul>
 						<div class="b-1 clearfix">
 							<div class="b1-1">
-								<a class="b11-1">
-									<i style="font-size: 26px;" class="iconfont"></i>
-									点击购买
-								</a>
+{#                                {% if tel %}#}
+{#                                    <a class="b11-1" goodsid="{{ goods.id }}">#}
+{#									    <i style="font-size: 26px;" class="iconfont"></i>#}
+{#									    点击购买#}
+{#                                    </a>#}
+{#                                {% else %}#}
+{#                                    <a class="b11-1" href="{% url 'loho:denglu' %}">#}
+{#									<i style="font-size: 26px;" class="iconfont"></i>#}
+{#									点击购买#}
+{#								</a>#}
+{#                                {% endif %}#}
+                                    <a class="b11-1" goodsid="{{ goods.id }}">
+									    <i style="font-size: 26px;" class="iconfont"></i>
+									    点击购买
+                                    </a>
 							</div>
+                            <script>
+                                $('.b11-1').click(function () {
+		var num = $('.a1-4').html()
+		var goodsid = $(this).attr('goodsid')
+
+		$.get('/add_to_cart/',{'goodsid':goodsid,'num':num},function (response) {
+			if (response.status == 1){
+				location.href = "{% url 'loho:mycart' %}"
+			}
+    	})
+
+    })
+                            </script>
 							<div class="b1-2">♥ 免费预约直营店验光</div>
 						</div>
 					</div>
