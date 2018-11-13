@@ -24,4 +24,8 @@ urlpatterns = [
     url(r'^delcarts/$',views.delcarts,name='delcarts'),#清空购物车
     url(r'^delselect/$',views.delselect,name='delselect'),#删除选中
     url(r'^allselect/$',views.allselect,name='allselect'),#全选
+
+    url(r'^pay/$', views.pay, name='pay'),  # 支付
+    url(r'^notifyurl/$', views.notifyurl, name='notifyurl'),  # 支付完成后的通知
+    url(r'^returnurl/$', views.returnurl, name='returnurl'),  # 支付完成后的跳转
 ]

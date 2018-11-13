@@ -10,6 +10,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from loho.alipay import alipay_loho
 from loho.models import User, Wheel, Goods, Cart, OrderGoods, Order
 
 
@@ -290,7 +291,7 @@ def orderinfo(request,identifier):
     # 一个订单 对应 多个商品
     order = Order.objects.get(identifier=identifier)
 
-    return render(request, 'orderinfo.html', context={'order': order})
+    return render(request, 'orderinfo.html', context={'order': order,'identifier':identifier})
 
 
 def add_to_cart(request):
@@ -360,3 +361,27 @@ def allselect(request):
             cart.save()
             total_price = 0
     return JsonResponse({'msg':'全选成功','total_price':total_price})
+
+def pay(request):
+    identifier = request.GET.get('identifier')
+    #支付url
+    url = alipay_loho.direct_pay(
+        subject = '测试订单 --- iphone X',#订单名称
+        out_trade_no = identifier,#订单号
+        total_amount = 50,#付款金额
+        return_url='http://39.105.186.82/returnurl/',
+    )
+    #拼接支付网关
+    alipay_url = 'https://openapi.alipaydev.com/gateway.do?{data}'.format(data=url)
+    return JsonResponse({'alipay_url':alipay_url})
+
+
+def notifyurl(request):
+    print('xxx 订单支付成功，请发货')
+    print(request.GET.get('subject'))
+    return JsonResponse({'msg':'success'})
+
+
+def returnurl(request):
+    print('xxx 订单支付成功，进行页面跳转')
+    return redirect('loho:shouye')

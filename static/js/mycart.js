@@ -296,8 +296,8 @@ $(function () {
         $.get('/generateorder/', function (response) {
             console.log(response)
             if (response.status == 1) {  // 跳转到订单详情
-                window.open('/orderinfo/' + response.identifier +
-                    '/', target = '_self')
+                $('.f2-1 :checked').prop('checked',false)
+                window.open('/orderinfo/' + response.identifier + '/', target = '_self')
             }
         })
     })

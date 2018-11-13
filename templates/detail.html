@@ -524,19 +524,6 @@
 									    点击购买
                                     </a>
 							</div>
-                            <script>
-                                $('.b11-1').click(function () {
-		var num = $('.a1-4').html()
-		var goodsid = $(this).attr('goodsid')
-
-		$.get('/add_to_cart/',{'goodsid':goodsid,'num':num},function (response) {
-			if (response.status == 1){
-				location.href = "{% url 'loho:mycart' %}"
-			}
-    	})
-
-    })
-                            </script>
 							<div class="b1-2">♥ 免费预约直营店验光</div>
 						</div>
 					</div>

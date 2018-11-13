@@ -154,6 +154,20 @@ $(function(){
     })
 
     //添加购物车
+	$('.b11-1').click(function () {
+		var num = $('.a1-4').html()
+		var goodsid = $(this).attr('goodsid')
+
+		$.get('/add_to_cart/',{'goodsid':goodsid,'num':num},function (response) {
+			console.log(111)
+			if (response.status == 1){
+				window.open("/mycart/",target="_self")
+			} else {
+			    window.open("/denglu/",target="_self")
+            }
+    	})
+
+    })
 
 	
 	
